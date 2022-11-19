@@ -47,10 +47,10 @@ For support, email larigens@gmail.com.
 - [W3 Schools](https://www.w3schools.com)
 
 - [MDN](https://developer.mozilla.org/en-US/)
-
-- [FrontEnd Trend](https://linktr.ee/frontend_trend)
   
-- [Rouvelle](https://www.rouvelle.com/javaScript_strings_to_numbers.htm)
+- [JQuery](https://api.jquery.com/)
+
+- [Boostrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
 
 ## Feedback
 
