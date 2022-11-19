@@ -1,15 +1,60 @@
+:root {
+  --dark-shades: #0B1320;
+  --dark-accent: #1C3F60;
+  --main-brand: #3d83c4;
+  --light-accent: #AFC1D0;
+  --light-shades: #F3F6FA;
+}
+
 body {
+  background-color: var(--light-shades);
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
+}
+
+header {
+  display: inline-flex;
+  height: 35vh;
+}
+
+.logo {
+  position: relative;
+  box-sizing: border-box;
+}
+
+img {
+  position: absolute;
+  top: -3rem;
+  left: -3rem;
+  border-radius: 30px;
+  width: 300px;
+  height: 300px;
+}
+
+h1 {
+  margin: 130px 0 auto 250px;
+  color: var(--dark-accent);
+}
+
+.subheader {
+  margin: 20px 0 30px 40px;
+  color: var(--main-brand);
 }
 
 textarea {
   background: transparent;
   border: none;
   resize: none;
-  color: #000000;
   border-left: 1px solid black;
   padding: 10px;
+}
+
+textarea,
+.past,
+.present,
+.future,
+.saveBtn {
+  color: var(--light-shades);
 }
 
 .description {
@@ -31,26 +76,22 @@ textarea {
 }
 
 .past {
-  background-color: #d3d3d3;
-  color: white;
+  background-color: var(--light-accent);
 }
 
 .present {
-  background-color: #ff6961;
-  color: white;
+  background-color: var(--dark-accent);
 }
 
 .future {
-  background-color: #77dd77;
-  color: white;
+  background-color: var(--dark-shades);
 }
 
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: #06aed5;
-  color: white;
+  background-color: var(--main-brand);
 }
 
 .saveBtn i:hover {
