@@ -8,7 +8,7 @@
 
 body {
   background-color: var(--light-shades);
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poiret One', cursive;
   font-size: 16px;
 }
 
@@ -37,19 +37,30 @@ h1 {
 }
 
 .subheader {
-  margin: 20px 0 30px 40px;
+  margin: 20px 10px 30px 40px;
   color: var(--main-brand);
 }
 
 textarea {
+  padding: 30px;
   background: transparent;
-  border: none;
   resize: none;
-  border-left: 1px solid black;
+  border: 1px solid var(--light-accent);
   padding: 10px;
+  color: var(--dark-accent);
 }
 
-textarea,
+.lead {
+  margin-left: 160px;
+  font-size: 18px;
+  color: var(--light-accent);
+}
+
+.today {
+  margin-left: 9px;
+  font-size: 18px;
+}
+
 .past,
 .present,
 .future,
@@ -61,40 +72,81 @@ textarea,
   white-space: pre-wrap;
 }
 
+.main {
+  margin: 0 10px;
+  padding: 0 10px;
+}
+
+::placeholder {
+  color: var(--light-accent);
+  padding-top: 10px;
+}
+
+textarea:focus {
+  outline: var(--light-accent);
+}
+
 .time-block {
   border-radius: 15px;
 }
 
 .row {
-  border-top: 1px solid white;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  margin: 10px 20px;
+  border: 1px solid var(--light-accent);
 }
 
 .hour {
-  background-color: #ffffff;
-  color: #000000;
-  border-top: 1px dashed #000000;
+  border: 1px solid var(--light-accent);
+  border-right: 1px solid black;
+  background-color: var(--light-accent);
+  color: var(--light-shades);
+  padding-top: 20px;
+  padding-left: 30px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
 }
 
 .past {
-  background-color: var(--light-accent);
-}
-
-.present {
-  background-color: var(--dark-accent);
-}
-
-.future {
   background-color: var(--dark-shades);
 }
 
-.saveBtn {
-  border-left: 1px solid black;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
+.present {
   background-color: var(--main-brand);
 }
 
-.saveBtn i:hover {
+.future {
+  background-color: var(--light-accent);
+}
+
+#save {
+  border-left: 1px solid var(--light-accent);
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: var(--dark-accent);
+  font-weight: lighter;
+}
+
+#save,
+#save i {
+  color: var(--light-shades);
+}
+
+#save i {
+  margin-right: 5px;
+}
+
+#save i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
+}
+
+footer p {
+  margin-top: 20px;
+  font-weight: lighter;
+  text-align: center;
+  color: var(--main-brand)
 }
