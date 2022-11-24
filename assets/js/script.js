@@ -22,7 +22,7 @@ $(document).ready(function () {
     }
   })
 
-  $(".time-block").each(function (storage) {
+  $(".row").each(function (storage) {
     var planHour = {
       plan: $(this).children("textarea .plan").val(),
       hour: parseInt($(this).attr("id"))
@@ -50,11 +50,7 @@ $(document).ready(function () {
     // Need to convert the object to a string before storing it, or it'll return [object, object].
     localStorage.setItem("storage", JSON.stringify(storage));
     // To not overwrite the stored data.
-    $(".plan").innerHTML = "";
-    for (i = 0; i < storage.length; i++) {
-      planHour.plan = storage[i].plan;
-    }
-
+    $(".plan").text(storage[i].plan);
   })
 
 
