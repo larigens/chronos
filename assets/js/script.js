@@ -14,56 +14,54 @@ $(document).ready(function () {
   $(".time-block").click(function (event) {
     var target = $(event.target);
     if (target.is("button")) {
-      var plan = $(this).siblings("textarea").val();
-      var hour = $(this).parent().attr("id");  // Gets the id of the parent element to store the data according to the hour.
-      storeData(plan, hour);
+
+      // If there is no saved data, then renders an empty array.
+      var storage = JSON.parse(localStorage.getItem("storage")) || [];
+      console.log(storage);
+      return storage;
     }
   })
 
-  // If there is no saved data, then renders an empty array.
-  var storage = JSON.parse(localStorage.getItem("storage")) || [];
+  $(".time-block").each(function (storage) {
+    var planHour = {
+      plan: $(this).children("textarea .plan").val(),
+      hour: parseInt($(this).attr("id"))
+    }
+    // ID is in a string, so I need to convert to an integer to be able to compare
+    console.log(planHour.hour)
 
-  function storeData() {
-    var userData = {
-      userPlan: $(".plan").val(),
-      userHour: $(".time-block").attr("id")
+    if (currentHour > planHour.hour) {
+      // $('.hour').addClass('past')
+      $(this).addClass('past')
+      // $('#save').addClass('past')
+    }
+    else if (currentHour == planHour.hour) {
+      $(this).addClass('present')
+    }
+    else if (currentHour < planHour.hour) {
+      $(this).addClass('future')
     }
 
     // Saves the data in the storage array.
-    storage.push(userData);
+    storage.push(planHour);
+
+    // Gets the id of the parent element to store the data according to the hour.
+    // Need to store here or it will always get the first id.
     // Need to convert the object to a string before storing it, or it'll return [object, object].
     localStorage.setItem("storage", JSON.stringify(storage));
-
-    displayPlans();
-  }
-
-  function displayPlans() {
     // To not overwrite the stored data.
     $(".plan").innerHTML = "";
-    // Creates a new element for each new data and attaches it to the container.
     for (i = 0; i < storage.length; i++) {
-      $(".plan").val() = storage[i].userPlan;
-      $(".time-block").attr("id", storage[i].userHour);
+      planHour.plan = storage[i].plan;
     }
-  }
 
-  $(".time-block").each(function () {
-    // ID is in a string, so I need to convert to an integer to be able to compare
-    var timeBlock = $(this).attr("id");
-    if (currentHour > timeBlock) {
-      // $('.hour').addClass('past')
-      $('.time-block').addClass('past')
-      // $('#save').addClass('past')
-    }
-    else if (currentHour === timeBlock) {
-      $('.time-block').addClass('present')
-    }
-    else if (currentHour < timeBlock) {
-      $('.time-block').addClass('future')
-    }
   })
+
+
 }
 )
+
+
 
 
   // How can DOM traversal be used to get the "hour-x" id of the
