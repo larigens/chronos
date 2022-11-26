@@ -55,7 +55,7 @@ textarea {
   resize: none;
   outline: none;
   border: none;
-  background: var(--light-accent);
+  /* background: var(--light-accent); */
   font-size: 20px;
 }
 textarea,
@@ -98,7 +98,7 @@ textarea,
 }
 
 .past {
-  background-color: var(--dark-shades);
+  background-color: var(--light-accent);
 }
 
 .present {
@@ -106,7 +106,7 @@ textarea,
 }
 
 .future {
-  background-color: var(--light-accent);
+  background-color: var(--dark-accent);
 }
 
 #save {
