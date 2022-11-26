@@ -3,13 +3,44 @@
 // the browser has finished rendering all the elements in the html.
 $(document).ready(function () {
 
-  // TODO: Add a listener for click events on the save button. This code should
+  $(function () {
+    for (i = 9; i < 18; i++) {
+      var divContainer = $("<div>");
+      divContainer.attr('id', 'hour-' + `${i}`);
+      divContainer.addClass("row");
+
+      var divContainer2 = $("<div>");
+      divContainer2.addClass("col-1 hour")
+      divContainer2.text(`${i}`);
+
+      var textareEl = $("<textarea>");
+      textareEl.addClass("col-10 plan");
+
+      var buttonEl = $("<button>");
+      buttonEl.attr("id", "save");
+      buttonEl.addClass("col-1");
+      buttonEl.text("Save");
+
+      var icon = $("<i aria-hidden='true'></i>");
+      icon.addClass("fa fa-save")
+      buttonEl.append(icon);
+
+      divContainer.append(divContainer2);
+      divContainer.append(textareEl);
+      divContainer.append(buttonEl);
+
+      $("#planner").append(divContainer)
+    }
+  })
+
+
+  // TODO: Add a listener for click events on the save buttonEl. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
   // function? How can DOM traversal be used to get the "hour-x" id of the
-  // time-block containing the button that was clicked? How might the id be
+  // time-block containing the buttonEl that was clicked? How might the id be
   // useful when saving the description in local storage?
-  // ----------- enter an event / WHEN I click the save button for that time block
+  // ----------- enter an event / WHEN I click the save buttonEl for that time block
   // THEN the text for that event is saved in local storage
 
   $(".row").click(function (event) {
@@ -30,7 +61,7 @@ $(document).ready(function () {
   // current hour in 24-hour time?
 
   function checkTime() {
-    var currentHour = moment().hour();
+    var currentHour = 12;
     $(".row").each(function () {
       var timeBlock = parseInt($(this).attr("id"))
       if (currentHour > timeBlock) {
@@ -49,7 +80,7 @@ $(document).ready(function () {
   checkTime()
 
   // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
+  // the values of the corresponding textareEl elements. HINT: How can the id
   // attribute of each time-block be used to do this?
 
   function displayPlanner() {
