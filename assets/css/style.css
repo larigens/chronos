@@ -9,7 +9,6 @@
 body {
   background-color: var(--light-shades);
   font-family: 'Poiret One', cursive;
-  font-size: 16px;
 }
 
 header {
@@ -17,13 +16,7 @@ header {
   height: 35vh;
 }
 
-.logo {
-  margin: 0;
-  display: inline-flex;
-}
-
 img {
-  border-radius: 30px;
   width: 300px;
   height: 300px;
 }
@@ -33,69 +26,67 @@ h1 {
   color: var(--dark-accent);
 }
 
-.lead {
-  margin-left: 130px;
+header p {
+  margin: 20px 0 0 180px;
   font-size: 18px;
+}
+
+header p,
+section,
+footer p {
   color: var(--main-brand);
 }
 
-.subheader {
-  margin: 20px 10px 30px 40px;
-  color: var(--main-brand);
+section {
+  margin: 40px 0 30px 30px;
 }
 
-.today {
-  margin-left: 5px;
-  font-size: 22px;
-}
-
-textarea {
-  padding: 12px;
-  background: transparent;
-  resize: none;
-  outline: none;
-  border: none;
-  /* background: var(--light-accent); */
+#currentDay {
   font-size: 20px;
 }
 
-textarea,
-.past,
-.present,
-.future {
-  color: var(--light-shades);
-}
-
-.main {
+#planner {
+  margin: 5px 20px 10px 14px;
+  box-shadow: 0 3px 5px 5px var(--main-brand);
   width: 98%;
-  border: 2px solid var(--light-accent);
-  box-sizing: border-box;
-  box-shadow: 0 3px 5px var(--main-brand);
-  border-radius: 15px;
-  margin: 0 20px;
-  padding: 2px;
-  text-align: center;
+  padding: 5px 7px;
 }
 
-::placeholder {
-  color: var(--light-accent);
-  padding-top: 10px;
+#planner,
+.row {
+  border-radius: 15px;
 }
 
 .row {
   margin: 5px 0;
-  border-radius: 15px;
-  box-shadow: 0 1px 8px var(--light-accent);
+  box-shadow: 0 2px 5px var(--light-accent);
 }
 
 .hour {
-  background-color: var(--light-accent);
-  color: var(--light-shades);
   padding-top: 20px;
   font-size: 20px;
   padding-left: 20px;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
+}
+
+.hour,
+textarea,
+button,
+i {
+  color: var(--light-shades);
+}
+
+textarea {
+  /* Border, outline, and resize as 'none' to ensure the background color is uniform and clean */
+  border: none;
+  outline: none;
+  resize: none;
+  /* To increase the size of the textarea */
+  padding: 10px;
+  /* Needs to be transparent so that color can be applied */
+  background: transparent;
+  font-size: 20px;
 }
 
 .past {
@@ -110,47 +101,26 @@ textarea,
   background-color: var(--dark-accent);
 }
 
-#save {
-  background-image: linear-gradient(to right,
-      var(--light-accent) 0%,
-      var(--main-brand) 51%,
-      var(--main-brand) 100%);
-  text-align: center;
+button {
   transition: 0.5s;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: var(--light-shades);
-  background-size: 200% auto;
-  box-shadow: 0 0 20px var(--light-accent);
+  background: linear-gradient(45deg, var(--light-accent), var(--main-brand), var(--dark-accent));
+  background-size: 200%;
   border: none;
-  outline: none;
-  color: #fff;
 }
 
-#save:hover {
-  background-position: right center;
-  color: var(--light-shades);
-  text-decoration: none;
-}
-
-#save:hover,
-#save i:hover {
-  font-size: 18px;
+button:hover {
   transition: 0.5s ease-out;
+  background-position: right center;
+  font-size: 17px;
 }
 
-#save,
-#save i {
-  color: var(--light-shades);
-}
-
-#save i {
+i {
   margin-right: 5px;
 }
 
 footer p {
-  margin-top: 30px;
-  font-weight: lighter;
+  margin-top: 40px;
   text-align: center;
-  color: var(--main-brand)
 }

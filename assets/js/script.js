@@ -1,16 +1,32 @@
 
+// Variable/Constant Declaration
+const nine = 9;
+const twelve = 12;
+const eighteen = 18;
+const div = "<div>";
+
 // Wrapped all code that interacts with the DOM to ensure that the code isn't run until
 // the browser has finished rendering all the elements in the html.
 $(document).ready(function () {
 
-  for (i = 9; i < 18; i++) {
-    var divContainer = $("<div>");
-    divContainer.attr('id', 'hour-' + `${i}`);
-    divContainer.addClass("row");
+  // Added code to display the current date in the header of the page.
+  $("#currentDay").text(moment().format('MMMM Do YYYY, hh:mm a'));
 
-    var divContainer2 = $("<div>");
-    divContainer2.addClass("col-1 hour");
-    divContainer2.text(checkAmPm(i));
+  createPlanner();
+  checkTime();
+  displayPlanner();
+
+});
+
+function createPlanner() {
+  for (hour = nine; hour < eighteen; hour++) {
+    var timeBlockContainer = $(div);
+    timeBlockContainer.attr('id', 'hour-' + `${hour}`);
+    timeBlockContainer.addClass("row");
+
+    var hourContainer = $(div);
+    hourContainer.addClass("col-1 hour");
+    hourContainer.text(checkAmPm(hour));
 
     var textareaEl = $("<textarea>");
     textareaEl.addClass("col-10 plan");
@@ -20,81 +36,70 @@ $(document).ready(function () {
     buttonEl.addClass("col-1");
     buttonEl.text("Save");
 
-    var icon = $("<i aria-hidden='true'></i>");
-    icon.addClass("fa fa-save");
-    buttonEl.prepend(icon);
+    var iconEl = $("<i aria-hidden='true'></i>");
+    iconEl.addClass("fa fa-save");
+    buttonEl.prepend(iconEl);
 
-    divContainer.append(divContainer2);
-    divContainer.append(textareaEl);
-    divContainer.append(buttonEl);
+    timeBlockContainer.append(hourContainer);
+    timeBlockContainer.append(textareaEl);
+    timeBlockContainer.append(buttonEl);
 
-    $("#planner").append(divContainer);
-  };
-
-  function checkAmPm(i) {
-    if (i > 12) {
-      i = i - 12;
-      i += " pm"
-    }
-    else if (i === 12) {
-      i += " pm"
-    }
-    else {
-      i += " am"
-    }
-    return i;
+    $("#planner").append(timeBlockContainer);
   }
-
-
 
   $(".row").click(function (event) {
     var target = $(event.target);
     if (target.is("button")) {
-      var hour = $(this).attr("id");
+      var hourId = $(this).attr("id");
       var plan = $(this).find(".plan").val();
       // Save in local storage
-      localStorage.setItem(hour, plan);
+      localStorage.setItem(hourId, plan);
     }
   }
-  );
+  )
+}
 
-  function checkTime() {
-    var currentHour = moment().hour();
-    $(".row").each(function () {
-      var timeBlock = $(this).attr("id");
-      var checkHour = parseInt(timeBlock.slice(5));
-      if (currentHour > checkHour) {
-        $(this).addClass('past')
-      }
-      else if (currentHour == checkHour) {
-        $(this).addClass('present')
-      }
-      else if (currentHour < checkHour) {
-        $(this).addClass('future')
-      }
-
-    });
+function checkAmPm(hour) {
+  if (hour > twelve) {
+    hour -= twelve;
+    hour += " pm"
   }
+  else if (hour === twelve) {
+    hour += " pm"
+  }
+  else {
+    hour += " am"
+  }
+  return hour;
+}
 
-  checkTime()
-
-  function displayPlanner() {
-    $(".row").each(function () {
-      var hourId = $(this).attr("id");
-      var plan = localStorage.getItem(hourId);
-      if (plan !== null) {
-        $(this).children(".plan").val(plan);
-      }
+function checkTime() {
+  var currentHour = moment().hour();
+  $(".row").each(function () {
+    var timeBlock = $(this).attr("id");
+    var checkHour = parseInt(timeBlock.slice(5));
+    if (currentHour > checkHour) {
+      $(this).addClass('past')
     }
-    )
+    else if (currentHour == checkHour) {
+      $(this).addClass('present')
+    }
+    else if (currentHour < checkHour) {
+      $(this).addClass('future')
+    }
+  });
+}
+
+function displayPlanner() {
+  $(".row").each(function () {
+    var hourId = $(this).attr("id");
+    var plan = localStorage.getItem(hourId);
+    if (plan !== null) {
+      $(this).children(".plan").val(plan);
+    }
   }
-
-  displayPlanner();
-
-  // TODO: Add code to display the current date in the header of the page.
-  $("#currentDay").text(moment().format('MMMM Do YYYY, hh:mm a'));
-
-});
+  )
+}
 
 
 // TODO: Add a listener for click events on the save buttonEl. This code should
