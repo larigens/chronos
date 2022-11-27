@@ -57,8 +57,10 @@ function renderPlanner() {
     if (target.is("button")) {  // Conditional statement to ensure that the function will only be executed if the button is clicked.
       var hourId = $(this).attr("id");
       var plan = $(this).find(".plan").val();
-      // Save to local storage with the hour id to ensure that the text will be saved and displayed only for that specific time block.
-      localStorage.setItem(hourId, plan);
+      if (plan !== "") { // Conditional statement to ensure that it will only be stored on click if the textarea is not empty.
+        // Save to local storage with the hour id to ensure that the text will be saved and displayed only for that specific time block.
+        localStorage.setItem(hourId, plan);
+      }
     }
   }
   )
