@@ -29,13 +29,13 @@ Detailed information about [cloning a repository.](https://docs.github.com/en/re
 
 ## Mock-Up
 
-The following image shows the web application's appearance and functionality:
+The following gif shows the web application's appearance and functionality:
 
-![App Screenshot](./assets/images/demos.gif)
+![App Screenshot](./assets/images/demo.gif)
 
 ## Usage/Examples
 
-You can quickly add new events, remove old ones, and each one will be color-coded to indicate whether it is in the past, present or future.
+You can quickly add your daily events. All you need to do is enter your plan for that hour and click the "Save" button to ensure that it will store the data. Each line will be color coded to indicate whether it is in the past, present, or future.
 
 ## Support
 
@@ -56,6 +56,7 @@ For support, email larigens@gmail.com.
 If you have any feedback, please contact me at larigens@gmail.com.
 
 ## 🔗 Links
+
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://larigens.github.io/lari-gui/)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/lari-gui/)
 [![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/coffeebr_eak)
