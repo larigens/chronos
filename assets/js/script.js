@@ -8,7 +8,7 @@ const div = "<div>";
 $(function () {
 
   // Added code to display the current date in the page header.
-  $("#currentDay").text(dayjs().format('MMMM Do YYYY, hh:mm a'));
+  $("#currentDay").text(dayjs().format('MMMM D, YYYY h:mm A'));
 
   // Calls all functions so they can be executed.
   renderPlanner();

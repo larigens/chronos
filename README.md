@@ -50,6 +50,8 @@ For support, email larigens@gmail.com.
 - [JQuery](https://api.jquery.com/)
 
 - [Boostrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
+  
+- [Day.js](https://day.js.org/docs/en/display/format)
 
 ## Feedback
 
