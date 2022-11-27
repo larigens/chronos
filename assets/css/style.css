@@ -84,7 +84,7 @@ textarea {
   resize: none;
   /* To increase the size of the textarea */
   padding: 10px;
-  /* Needs to be transparent so that color can be applied */
+  /* Needs to be transparent so that the color can be applied */
   background: transparent;
   font-size: 20px;
 }
@@ -111,6 +111,7 @@ button {
 }
 
 button:hover {
+  /* Creates an animation when hovering */
   transition: 0.5s ease-out;
   background-position: right center;
   font-size: 17px;
