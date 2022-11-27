@@ -8,7 +8,7 @@ const div = "<div>";
 $(function () {
 
   // Added code to display the current date in the page header.
-  $("#currentDay").text(moment().format('MMMM Do YYYY, hh:mm a'));
+  $("#currentDay").text(dayjs().format('MMMM Do YYYY, hh:mm a'));
 
   // Calls all functions so they can be executed.
   renderPlanner();
@@ -84,7 +84,7 @@ function checkAmPm(hour) {
 // Function to make each row color-coded to indicate whether it is in the past, present, or future.
 function checkTime() {
   // Code in the 24-hour time for easy comparison.
-  var currentHour = moment().hour();
+  var currentHour = dayjs().hour();
   $(".row").each(function () {
     var hourId = $(this).attr("id");
     // Slices the string to get only the hour and converts it to a number for comparison.
