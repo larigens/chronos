@@ -35,7 +35,7 @@ The following gif shows the web application's appearance and functionality:
 
 ## Usage/Examples
 
-You can quickly add your daily events. All you need to do is enter your plan for that hour and click the "Save" button to ensure that it will store the data. Each line will be color coded to indicate whether it is in the past, present, or future.
+This application allows you to easily and quickly organize your daily events by the hour they occur. Each line will be color coded to indicate whether it is in the past, present, or future. To create an event on your daily planner, all you need to do is enter your plan for that hour and click the "Save" button to ensure that it will store the data. 
 
 ## Support
 
