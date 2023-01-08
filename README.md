@@ -13,12 +13,12 @@
   <br>
 </p>
 
-![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-red.svg)
-![Contributors](https://img.shields.io/github/contributors/larigens/rchronos?style=plastic&color=red)
-![Forks](https://img.shields.io/github/forks/larigens/chronos?style=plastic&color=red)
-![Stars](https://img.shields.io/github/stars/larigens/chronos?style=plastic&color=red)
-![Licence](https://img.shields.io/github/license/larigens/chronos?style=plastic&color=red)
-![Issues](https://img.shields.io/github/issues/larigens/chronos?style=plastic&color=red)
+![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-9cf.svg)
+![Contributors](https://img.shields.io/github/contributors/larigens/rchronos?style=plastic&color=9cf)
+![Forks](https://img.shields.io/github/forks/larigens/chronos?style=plastic&color=9cf)
+![Stars](https://img.shields.io/github/stars/larigens/chronos?style=plastic&color=9cf)
+![Licence](https://img.shields.io/github/license/larigens/chronos?style=plastic&color=9cf)
+![Issues](https://img.shields.io/github/issues/larigens/chronos?style=plastic&color=9cf)
 
 ---
 ## Description
