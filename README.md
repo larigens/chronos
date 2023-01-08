@@ -1,4 +1,3 @@
-
 <h1 align="center"> Chronos </h1>
 
 <p align="center">
@@ -13,7 +12,6 @@
   <a href="https://larigens.github.io/chronos/"><strong>Visit us!</strong></a>
   <br>
 </p>
-
 
 ![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-red.svg)
 ![Contributors](https://img.shields.io/github/contributors/larigens/rchronos?style=plastic&color=red)
