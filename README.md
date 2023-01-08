@@ -70,7 +70,10 @@ This application allows you to easily and quickly organize your daily events by 
 
 ## Questions
 
-For questions and support please <a href="mailto:larigens@gmail.com">email me</a>!
+For questions and support feel free to contact me via:
+
+<a href="mailto:larigens@gmail.com">📧 Email </a>
+<a href="https://github.com/${github}">🐈‍⬛ GitHub </a>
 
 ## Contributions
 
