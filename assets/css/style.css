@@ -4,6 +4,9 @@
   --main-brand: #507394;
   --light-accent: #AFC1D0;
   --light-shades: #F3F6FA;
+  --future: #70139e;
+  --present: #bc47c6;
+  --past: #1998b1;
 }
 
 body {
@@ -90,15 +93,15 @@ textarea {
 }
 
 .past {
-  background-color: var(--light-accent);
+  background-color: var(--past);
 }
 
 .present {
-  background-color: var(--main-brand);
+  background-color: var(--present);
 }
 
 .future {
-  background-color: var(--dark-accent);
+  background-color: var(--future);
 }
 
 button {

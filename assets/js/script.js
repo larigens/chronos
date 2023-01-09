@@ -34,7 +34,7 @@ function renderPlanner() {
     var plan = localStorage.getItem(hourId);
     console.log(localStorage.getItem(hourId))
     if (plan !== null) {
-      textareaEl.text(plan);
+      textareaEl.val(plan);
     }
 
     var buttonEl = $("<button>");
@@ -60,7 +60,7 @@ function renderPlanner() {
     var target = $(event.target); // Event.target was added to locate where the user clicked.
     if (target.is("button")) {  // Conditional statement to ensure that the function will only be executed if the button is clicked.
       var hourId = $(this).attr("id");
-      var plan = $(this).find(".plan").text();
+      var plan = $(this).find(".plan").val();
       if (plan !== "") { // Conditional statement to ensure that it will only be stored on click if the textarea is not empty.
         // Save to local storage with the hour id to ensure that the text will be saved and displayed only for that specific time block.
         localStorage.setItem(hourId, plan)
