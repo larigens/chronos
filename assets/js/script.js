@@ -1,29 +1,27 @@
 // Constant Declaration
-const nine = 9;
-const twelve = 12;
-const eighteen = 18;
+const start = 9;
+const pmStart = 12;
+const finish = 17;
 const div = "<div>";
 
 // Will only run once the page DOM is ready for JavaScript code to execute. Shorthand for $(document).ready(function ())
 $(function () {
-
   // Added code to display the current date in the page header.
   $("#currentDay").text(dayjs().format('MMMM D, YYYY h:mm A'));
 
   // Calls all functions so they can be executed.
   renderPlanner();
   checkTime();
-  renderStorage();
-
 });
 
 // Creates the planner elements and attaches them.
 function renderPlanner() {
   // Loop to continue generating the elements for all working hours.
-  for (hour = nine; hour < eighteen; hour++) {
+  for (hour = start; hour <= finish; hour++) {
     var timeBlockContainer = $(div);
     timeBlockContainer.attr('id', 'hour-' + `${hour}`);
     timeBlockContainer.addClass("row");
+    var hourId = timeBlockContainer.attr("id");
 
     // Child elements of the time block container.
     var hourContainer = $(div);
@@ -32,6 +30,12 @@ function renderPlanner() {
 
     var textareaEl = $("<textarea>");
     textareaEl.addClass("col-10 plan");
+
+    var plan = localStorage.getItem(hourId);
+    console.log(localStorage.getItem(hourId))
+    if (plan !== null) {
+      textareaEl.text(plan);
+    }
 
     var buttonEl = $("<button>");
     buttonEl.attr("id", "save");
@@ -56,10 +60,10 @@ function renderPlanner() {
     var target = $(event.target); // Event.target was added to locate where the user clicked.
     if (target.is("button")) {  // Conditional statement to ensure that the function will only be executed if the button is clicked.
       var hourId = $(this).attr("id");
-      var plan = $(this).find(".plan").val();
+      var plan = $(this).find(".plan").text();
       if (plan !== "") { // Conditional statement to ensure that it will only be stored on click if the textarea is not empty.
         // Save to local storage with the hour id to ensure that the text will be saved and displayed only for that specific time block.
-        localStorage.setItem(hourId, plan);
+        localStorage.setItem(hourId, plan)
       }
     }
   }
@@ -68,11 +72,11 @@ function renderPlanner() {
 
 // Function to make the displayed time more understandable for users, since the 24-hour model is not common.
 function checkAmPm(hour) {
-  if (hour > twelve) {
-    hour -= twelve;
+  if (hour > pmStart) {
+    hour -= pmStart;
     hour += " pm"
   }
-  else if (hour === twelve) {
+  else if (hour === pmStart) {
     hour += " pm"
   }
   else {
@@ -99,16 +103,4 @@ function checkTime() {
       $(this).addClass('future')
     }
   });
-}
-
-// Function to display the local storage whenever the user loads the page.
-function renderStorage() {
-  $(".row").each(function () {
-    var hourId = $(this).attr("id");
-    var plan = localStorage.getItem(hourId);
-    if (plan !== null) {
-      $(this).children(".plan").val(plan);
-    }
-  }
-  )
 }
