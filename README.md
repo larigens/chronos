@@ -17,7 +17,7 @@
 ![Contributors](https://img.shields.io/github/contributors/larigens/chronos?style=plastic&color=9cf)
 ![Forks](https://img.shields.io/github/forks/larigens/chronos?style=plastic&color=9cf)
 ![Stars](https://img.shields.io/github/stars/larigens/chronos?style=plastic&color=9cf)
-![Licence](https://img.shields.io/github/license/larigens/chronos?style=plastic&color=9cf)
+![Licence](https://img.shields.io/static/v1?label=License&message=Apache-2.0&color=9cf
 ![Issues](https://img.shields.io/github/issues/larigens/chronos?style=plastic&color=9cf)
 
 ---
@@ -107,4 +107,4 @@ Our Code of Conduct follows the same principles as the [Contributor Covenant](ht
 
 ## License
 
-Please refer to the [LICENSE](https://choosealicense.com/licenses/mit/) in the repo.
+Please refer to the [LICENSE](https://choosealicense.com/licenses/apache-2.0/) in the repo.
